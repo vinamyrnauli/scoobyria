@@ -1,11 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>SCOOBYRIA</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
     <style>
         body {
-            background-image: url('gradient.jpg');
+            background-image: url("{% static 'gradient.jpg' %}"); 
             background-size: auto; 
         }
 
@@ -25,11 +31,6 @@
             width: 250px;
             height: 250px; 
         }
-
-        .button-vina {
-            display: block;
-            margin: 0 auto;
-        }
     </style>
 </head>
 <body>
@@ -37,19 +38,15 @@
     <div class="container">
         <div class="item">
             <h2>Food</h2>
-            <img src="foodie.png" alt="Makanan Scoobyria">
+            <img src="{% static 'foodie.png' %}">
             <p>{{ harga }}</p>
             <p>What did Mr. Hamburger name his daughter?</p>
-            <button class="button-vina" id="foodButton">Get Food</button>
-            <audio id="foodAudio" src="aburger.mp3"></audio>
         </div>
         <div class="item">
             <h2>Drink</h2>
-            <img src="drink.png" alt="Minuman Scoobyria">
+            <img src="{% static 'drink.png' %}">
             <p>{{ harga }}</p>
             <p>What is a koalas favorite drink?</p>
-            <button class="button-vina" id="drinkButton">Get Drink</button>
-            <audio id="drinkAudio" src="awater.mp3"></audio>
         </div>
     </div>
     <p>Name: {{ name }}</p>
