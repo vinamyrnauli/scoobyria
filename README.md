@@ -229,5 +229,5 @@ Pola arsitektur pembuatan aplikasi berbasis GUI yang berfokus pada pemisahan ant
 * ***Perbedaan dengan MVC:*** Pada MVC, bagian *ViewModel* digantikan oleh *controller* yang berfungsi sebagai penghubung antara *view* dan *model*
 
 ## BONUS
-Berikut adalah bukti bahwa tests.py yang sudah saya tambahkan, berjalan dengan lancar.
+Berikut adalah bukti bahwa `tests.py` yang sudah saya tambahkan, berjalan dengan lancar.
 ![TES](/fotovina/mytest.jpg)
