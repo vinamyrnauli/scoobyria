@@ -3,12 +3,6 @@
 <html>
 <head>
     <title>SCOOBYRIA</title>
-    <link rel="stylesheet" type="text/css" href="./styles.css">
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-
     <style>
         body {
             background-image: url("{% static 'gradient.jpg' %}"); 
@@ -31,8 +25,37 @@
             width: 250px;
             height: 250px; 
         }
+
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1 {
+            font-family: 'Arial', sans-serif;
+            font-weight: bolder;
+            text-align: center;
+            text-shadow: 2px 2px 4px #000;
+            font-size: 50px;
+            color: saddlebrown;
+        }
+
+        h2 {
+            font-family: 'Arial', sans-serif;
+            font-weight: bolder;
+            text-shadow: 2px 2px 4px #000;
+            font-size: 30px;
+            color: burlywood;
+        }
+
+        p {
+            font-family: 'Arial', sans-serif;
+            font-weight: bolder;
+            font-size: 16px;
+            color:darkslategray;
+        }
     </style>
 </head>
+
 <body>
     <h1>SCOOBYRIA</h1>
     <div class="container">
@@ -51,6 +74,5 @@
     </div>
     <p>Name: {{ name }}</p>
     <p>Class: {{ class }}</p>
-    <script src="script.js"></script>
 </body>
 </html>
