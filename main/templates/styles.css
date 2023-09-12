@@ -1,0 +1,52 @@
+@font-face {
+    font-family: 'Luminari';
+    src: url('path-to-luminari-font.woff2') format('woff2'),
+         url('path-to-luminari-font.woff') format('woff'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'Luminari', fantasy;
+}
+
+h1 {
+    font-family: 'Luminari', fantasy;
+    font-weight: lighter;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000;
+    font-size: 50px;
+    color: saddlebrown;
+}
+
+h2 {
+    font-family: 'Luminari', fantasy;
+    font-weight: lighter;
+    text-shadow: 2px 2px 4px #000;
+    font-size: 30px;
+    color: burlywood;
+}
+
+p {
+    font-family: 'Arial', sans-serif;
+    font-weight: bolder;
+    font-size: 16px;
+    color:darkslategray;
+}
+
+.button-vina {
+    background-color: #ff69b4; 
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 25px; 
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); 
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.button-vina:hover {
+    background-color: #ff5b9e;
+    transform: scale(1.05); 
+}

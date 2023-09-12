@@ -1,6 +1,59 @@
-<h1>Shopping List Page</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SCOOBYRIA</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        body {
+            background-image: url('gradient.jpg');
+            background-size: auto; 
+        }
 
-<h5>Name: </h5>
-<p>{{ name }}</p> <!-- Ubahlah sesuai dengan nama kamu -->
-<h5>Class: </h5>
-<p>{{ class }}</p> <!-- Ubahlah sesuai dengan kelas kamu -->
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
+        .item {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .item img {
+            width: 250px;
+            height: 250px; 
+        }
+
+        .button-vina {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>SCOOBYRIA</h1>
+    <div class="container">
+        <div class="item">
+            <h2>Food</h2>
+            <img src="foodie.png" alt="Makanan Scoobyria">
+            <p>{{ harga }}</p>
+            <p>What did Mr. Hamburger name his daughter?</p>
+            <button class="button-vina" id="foodButton">Get Food</button>
+            <audio id="foodAudio" src="aburger.mp3"></audio>
+        </div>
+        <div class="item">
+            <h2>Drink</h2>
+            <img src="drink.png" alt="Minuman Scoobyria">
+            <p>{{ harga }}</p>
+            <p>What is a koalas favorite drink?</p>
+            <button class="button-vina" id="drinkButton">Get Drink</button>
+            <audio id="drinkAudio" src="awater.mp3"></audio>
+        </div>
+    </div>
+    <p>Name: {{ name }}</p>
+    <p>Class: {{ class }}</p>
+    <script src="script.js"></script>
+</body>
+</html>
