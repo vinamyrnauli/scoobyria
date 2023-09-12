@@ -1,5 +1,5 @@
 ## LINK ADAPTABLE
-[link nanti di sini]
+https://scoobyria.adaptable.app
 
 <hr>
 
