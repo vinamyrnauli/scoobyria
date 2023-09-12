@@ -1,12 +1,10 @@
-{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
     <title>SCOOBYRIA</title>
     <style>
         body {
-            background-image: url("{% static 'gradient.jpg' %}"); 
-            background-size: auto; 
+            background-color: bisque;
         }
 
         .container {
@@ -61,13 +59,11 @@
     <div class="container">
         <div class="item">
             <h2>Food</h2>
-            <img src="{% static 'foodie.png' %}">
             <p>{{ harga }}</p>
             <p>What did Mr. Hamburger name his daughter?</p>
         </div>
         <div class="item">
             <h2>Drink</h2>
-            <img src="{% static 'drink.png' %}">
             <p>{{ harga }}</p>
             <p>What is a koalas favorite drink?</p>
         </div>
