@@ -1,0 +1,24 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+<h1 style="color: seagreen; font-family: Arial, sans-serif; font-weight: bolder; display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;text-shadow: 2px 2px 4px #000;">Add New Product</h1>
+<style>
+    body {
+        background-color: pink;
+    }
+</style>
+
+<form method="POST">
+    {% csrf_token %}
+    <table>
+        {{ form.as_table }}
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Add Product" style="color: brown; font-weight: bolder"/>
+            </td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}

@@ -1,74 +1,43 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>SCOOBYRIA</title>
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 style="color: saddlebrown; font-family: Arial, sans-serif; font-weight: bolder; display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;text-shadow: 2px 2px 4px #000;">SCOOBYRIA</h1>
+
     <style>
         body {
             background-color: bisque;
         }
-
-        .container {
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            align-items: center;
-        }
-
-        .item {
-            text-align: center;
-            margin: 20px;
-        }
-
-        .item img {
-            width: 250px;
-            height: 250px; 
-        }
-
-        body {
-            font-family: 'Arial', sans-serif;
-        }
-
-        h1 {
-            font-family: 'Arial', sans-serif;
-            font-weight: bolder;
-            text-align: center;
-            text-shadow: 2px 2px 4px #000;
-            font-size: 50px;
-            color: saddlebrown;
-        }
-
-        h2 {
-            font-family: 'Arial', sans-serif;
-            font-weight: bolder;
-            text-shadow: 2px 2px 4px #000;
-            font-size: 30px;
-            color: burlywood;
-        }
-
-        p {
-            font-family: 'Arial', sans-serif;
-            font-weight: bolder;
-            font-size: 16px;
-            color:darkslategray;
-        }
     </style>
-</head>
 
-<body>
-    <h1>SCOOBYRIA</h1>
-    <div class="container">
-        <div class="item">
-            <h2>Food</h2>
-            <p>{{ harga }}</p>
-            <p>What did Mr. Hamburger name his daughter?</p>
-        </div>
-        <div class="item">
-            <h2>Drink</h2>
-            <p>{{ harga }}</p>
-            <p>What is a koalas favorite drink?</p>
-        </div>
-    </div>
-    <p>Name: {{ name }}</p>
-    <p>Class: {{ class }}</p>
-</body>
-</html>
+    <h5>Name: {{name}}</h5>
+    <h5>Class: {{class}}</h5>
+
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Description</th>
+    </tr>
+
+    {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
+
+    {% for product in products %}
+        <tr>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.description}}</td>
+        </tr>
+    {% endfor %}
+</table>
+
+<br />
+
+<a href="{% url 'main:create_product' %}">
+    <button style="color: green; font-weight: bolder; align-items: center" >
+        Add New Product
+    </button>
+</a>
+    
+{% endblock content %}
+
