@@ -246,57 +246,57 @@ Berikut adalah bukti bahwa `tests.py` yang sudah saya tambahkan, berjalan dengan
 <hr>
 
 ## **A. Perbedaan form `POST` dan `GET` dalam Django**
-#### 1. Cara Mengirim Data
+## 1. Cara Mengirim Data
 * `GET`: mengirim data form dalam URL.
 * `POST`: mengirim data form sebagai bagian dari tubuh permintaan HTTP secara tersembunyi dan tidak muncul di URL.
-#### 2. Fungsi
+## 2. Fungsi
 * `GET`: membaca informasi atau permintaan pencarian.
 * `POST`: mengubah status sistem atau mengirim data sensitif.
-#### 3. Keamanan secara Umum
+## 3. Keamanan secara Umum
 * `GET`: tidak cocok untuk data sensitif karena data akan muncul dalam URL.
 * `POST`: lebih aman untuk data sensitif karena data tidak muncul dalam URL.
-#### 4. Kemampuan *Bookmarking*
+## 4. Kemampuan *Bookmarking*
 * `GET`: dapat di-*bookmark* karena data ada di dalam URL.
 * `POST`: tidak dapat di-*bookmark* karena data tidak ada di dalam URL.
-#### 5. Keamanan Aplikasi
+## 5. Keamanan Aplikasi
 * `GET`: apabila menggunakannya untuk data sensitif, akan menjadi risiko keamanan.
 * `POST`: perlindungan seperti `CSRF Django`, dapat meningkatkan keamanan aplikasi. 
 <br>
 
 ## **B. Perbedaan XML *(eXtensible Markup Language)*, JSON *(JavaScript Object Notation)*, dan HTML *(Hypertext Markup Language)* dalam Pengiriman Data**
-#### 1. Fungsi
+## 1. Fungsi
 * **XML:** menyimpan dan mengirim data. Format datanya fleksibel dan *self-descriptive*.
 * **JSON:** menyimpan dan mengirim data dalam bentuk data terstruktur. Format datanya ringkas dan mudah dimengerti.
 * **HTML:** membuat struktur dan tampilan konten pada halaman web yang merupakan bahasa *markup* untuk mengatur tampilan web. 
-#### 2. Struktur Data
+## 2. Struktur Data
 * **XML:** data disusun seperti bentuk pohon atau *tree structure* dengan elemen-elemen yang memiliki *parent-child relationships*.
 * **JSON:** data disimpan dalam pasangan *key-value* dan dapat bersifat *nested*.
 * **HTML:** menggambarkan struktur halaman web, di antarnya terdapat *headings*, paragraf, tautan, gambar, dan tabel.
-#### 3. Sintaks
+## 3. Sintaks
 * **XML:** menggunakan *tags (markup)* untuk mengelompokkan data dan tiap elemen harus memiliki *tag* pembuka dan penutup. 
 * **JSON:** menggunakan format teks yang mirip dengan struktur objek `JavaScript` dengan objek *key-value*.
 * **HTML:** menggunakan *tags* untuk menandai tiap konten elemen dan mengatur tampilan halaman web.
-#### 4. Keterbacaan
+## 4. Keterbacaan
 * **XML:** lebih sulit dibaca kaarena terdapat banyak *markup*.
 * **JSON:** mudah dibaca dan sering digunakan dalam pertukaran data antar-aplikasi, konfigurasi, dan penyimpanan data sederhana.
 * **HTML:** mudah dibaca karena untuk merancang tampilan halaman web dan konten.
 <br>
 
 ## **C. JSON sebagai Pertukaran Data antara Aplikasi Web Modern**
-#### 1. Sederhana dan Mudah Dibaca
+## 1. Sederhana dan Mudah Dibaca
 JSON menggunakan format yang mudah dibaca, yaitu pasangan *key-value* dan *arrays*.
-#### 2. Tidak Perlu *Tag* atau Skema Khusus
+## 2. Tidak Perlu *Tag* atau Skema Khusus
 Tidak seperti XML, JSON tidak perlu menggunakan *tag*, atribut, atau skema khusus yang membuatnya lebih ringkas dan fleksibel. 
-#### 3. Mendukung Berbagai Tipe Data
+## 3. Mendukung Berbagai Tipe Data
 JSON mendukung berbagai tipe data, di antaranya *strings, numbers, booleans, nulls, objects,* dan *arrays* yang dapat berbentuk *nested*.
-#### 4. Mudah Dikonversi ke `JavaScript` dan Sebaliknya
+## 4. Mudah Dikonversi ke `JavaScript` dan Sebaliknya
 Hal ini sangat berguna bagi para pengembang web karena memungkinkan untuk memproses dan memanipulasi data dengan mudah.
-#### 5. Efisien dan Ringkas
+## 5. Efisien dan Ringkas
 JSON memiliki form data yang ringkas. Hal ini dapat menghemat *bandwith* dan mempercepat pertukaran data antara aplikasi web. 
 <br>
 
 ## **D. Implementasi *Checklist* Part 2**
-#### Membuat Input `form` untuk Menambahkan Objek Model
+## Membuat Input `form` untuk Menambahkan Objek Model
 1. Awalnya, saya mengaktifkan *virtual environment* pada proyek scoobyria seperti berikut.
     ``` bash
     env\Scripts\activate.bat
@@ -419,7 +419,7 @@ JSON memiliki form data yang ringkas. Hal ini dapat menghemat *bandwith* dan mem
 10. Lalu, saya membuat `crate_product.hmtl` pada direktori `main/templates` dan menambahkan kode dalam `{% block content %}` pada `main.html` sesuai dengan tema aplikasi saya.
 <br>
 
-#### Menambahkan 5 Fungsi `views` dalam Format HTML, XML, JSON, XML *by ID*, dan JSON *by ID*.
+## Menambahkan 5 Fungsi `views` dalam Format HTML, XML, JSON, XML *by ID*, dan JSON *by ID*.
 1. Kemudian, saya menambahkan beberapa fungsi dan *import* pada `views.py` di direktori `main` seperti berikut.
     ``` python
     from django.http import HttpResponse
@@ -470,7 +470,7 @@ JSON memiliki form data yang ringkas. Hal ini dapat menghemat *bandwith* dan mem
     ```
 <br>
 
-#### Membuat *Routing* URL untuk Masing-Masing `views`
+## Membuat *Routing* URL untuk Masing-Masing `views`
 1. Selanjutnya, saya memodifikasi berkas `urls.py` pada *folder* `main` dengan menambahkan beberapa *path* dan *import* seperti berikut.
     ``` python
     from django.urls import path
@@ -489,14 +489,14 @@ JSON memiliki form data yang ringkas. Hal ini dapat menghemat *bandwith* dan mem
     ```
 <br>
 
-#### Menambahkan Pesan Singkat
+## Menambahkan Pesan Singkat
 1. Terakhir, saya menambahkan beberapa kode pada `main.html` di `main/templates` seperti berikut.
     ``` html
     <h4>Only {{ products.count }} item(s) available</h4>
     ```
 <br>
 
-#### Mengakses URL dengan Postman
+## Mengakses URL dengan Postman
 Berikut adalah *screenshots* dari hasil akses URL pada Postman saya.
 ![POST1](/photos/post1.jpg)
 ![POST2](/photos/post2.jpg)
@@ -505,7 +505,7 @@ Berikut adalah *screenshots* dari hasil akses URL pada Postman saya.
 ![POST5](/photos/post5.jpg)
 <br>
 
-#### Melakukan Add, Commit, dan Push
+## Melakukan Add, Commit, dan Push
 Apabila semuanya sudah selesai, saya melakukan `add`, `commit`, `push` pada repositori `scoobyria` di GitHub.
 <br>
 
