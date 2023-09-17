@@ -6,7 +6,6 @@ from main.forms import ProductForm
 from django.urls import reverse
 from main.models import Product
 
-# Create your views here.
 def show_main(request):
     products = Product.objects.all()
 
