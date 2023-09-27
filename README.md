@@ -852,6 +852,6 @@ env\Scripts\activate.bat
 
 #### **F. BONUS TUGAS 4**
 Berikut adalah bukti bahwa saya menambahkan fungsi `add_product`, `decrement_product`, dan `remove_product` di `views.py` sehingga dapat menghasilkan tampilan seperti berikut.
-![COBA](/photos/bonusempat.jpg)
+![COBA](/photos/bonusfour.jpg)
 <br>
 </details>
