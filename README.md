@@ -231,7 +231,7 @@ Pola arsitektur pembuatan aplikasi berbasis GUI yang berfokus pada pemisahan ant
 
 ## **E. BONUS**
 Berikut adalah bukti bahwa `tests.py` yang sudah saya tambahkan, berjalan dengan lancar.
-![TES](/photos/mytest.jpg)
+![TES](/photos/bonustwo.jpg)
 </details>
 
 <details>
@@ -263,6 +263,10 @@ Berikut adalah bukti bahwa `tests.py` yang sudah saya tambahkan, berjalan dengan
 * `POST`: perlindungan seperti `CSRF Django`, dapat meningkatkan keamanan aplikasi. 
 <br>
 
+*Source:*
+* https://docs.djangoproject.com/en/4.2/topics/forms/
+<br>
+
 ## **B. Perbedaan XML *(eXtensible Markup Language)*, JSON *(JavaScript Object Notation)*, dan HTML *(Hypertext Markup Language)* dalam Pengiriman Data**
 #### **1. Fungsi**
 * **XML:** menyimpan dan mengirim data. Format datanya fleksibel dan *self-descriptive*.
@@ -282,6 +286,10 @@ Berikut adalah bukti bahwa `tests.py` yang sudah saya tambahkan, berjalan dengan
 * **HTML:** mudah dibaca karena untuk merancang tampilan halaman web dan konten.
 <br>
 
+*Source:*
+* https://pbp-fasilkom-ui.github.io/ganjil-2024/docs/tutorial-2#referensi-tambahan
+<br>
+
 ## **C. JSON sebagai Pertukaran Data antara Aplikasi Web Modern**
 #### **1. Sederhana dan Mudah Dibaca**
 JSON menggunakan format yang mudah dibaca, yaitu pasangan *key-value* dan *arrays*.
@@ -293,6 +301,10 @@ JSON mendukung berbagai tipe data, di antaranya *strings, numbers, booleans, nul
 Hal ini sangat berguna bagi para pengembang web karena memungkinkan untuk memproses dan memanipulasi data dengan mudah.
 #### **5. Efisien dan Ringkas**
 JSON memiliki form data yang ringkas. Hal ini dapat menghemat *bandwith* dan mempercepat pertukaran data antara aplikasi web. 
+<br>
+
+*Source:*
+* https://www.linkedin.com/advice/3/what-benefits-drawbacks-using-json-data
 <br>
 
 ## **D. Implementasi *Checklist* Part 2**
@@ -511,5 +523,335 @@ Apabila semuanya sudah selesai, saya melakukan `add`, `commit`, `push` pada repo
 
 ## **E. BONUS TUGAS 2**
 Berikut adalah bukti bahwa saya menambahkan pesan singkat untuk nilai bonus.
-![COBA](/photos/bonustwo.jpg)
+![COBA](/photos/bonusthree.jpg)
+</details>
+
+<details>
+<summary>📋Assignment 4</summary>
+
+## **DAFTAR ISI**
+* [Kelebihan dan Kekurangan `UserCreationForm`](#a-pengertian-djago-usercreationform-beserta-kelebihan-dan-kekurangan)
+* [Perbedaan Autentikasi dan Otorisasi dalam Django](#b-perbedaan-autentikasi-dan-otorisasi-dalam-django)
+* [Pengertian dan Penggunaan *Cookies* pada Django](#c-pengertian-cookies-dan-penggunaannya-pada-django)
+* [Keamanan dan Risiko Potensial *Cookies*](#d-keamaan-cookies-dan-risiko-potensialnya)
+* [Implementasi *Checklist*](#e-implementasi-checklist-part-3)
+* [BONUS](#f-bonus-tugas-4)
+<hr>
+
+## **A. Pengertian Djago `UserCreationForm` beserta Kelebihan dan Kekurangan**
+#### **1. Pengertian**
+`UserCreationForm` merupakan impor *form* bawaan yang memudahkan pembuatan *form* pendaftaran untuk *user* dalam aplikasi web. Django `UserCreationForm` memiliki *form* yang mempunyai tiga *field*, yaitu **username**, **password1**, dan **password2** yang biasanya digunakan untuk konfirmasi password1.
+
+#### **2. Kelebihan**
+* Dengan menggunakan *form* ini, *user* baru dapat dengan mudah mendaftar di situs web tanpa perlu menuliskan kode dari awal. 
+
+* Memfasilitasi validasi *password* dan izin otomatis. 
+
+#### **3. Kekurangan**
+* `UserCreationForm` memiliki tiga *field* secara *default*. Apabila ingin menambah *field* lain, maka kita harus membuat *custom form* atau *override* `UserCreationForm`. Hal ini dapat memakan waktu.
+
+* Tidak memiliki *field* untuk email, maka dari itu diperlukan class `CustomUserCreationForm` agar dapat membuat *field* email.
+<br>
+
+*Source:*
+* https://www.javatpoint.com/django-usercreationform
+* https://overiq.com/django-1-10/django-creating-users-using-usercreationform/
+<br>
+
+## **B. Perbedaan Autentikasi dan Otorisasi dalam Django**
+#### **1. Perbedaan**
+| Autentikasi | Otorisasi |
+| --- | --- |
+| Identitas pengguna diperiksa agar dapat diakses ke sistem | Memutuskan apa yang dapat dilakukan pengguna yang diautentikasi di situs |
+| Proses ini dilakukan sebelum proses otorisasi | proses ini dilakukan setelah proses autentikasi |
+| Membutuhkan *detail* login pengguna | Membutuhkan hak istimewa pengguna |
+| Pada proses ini, pengguna harus diverifikasi | Pada proses ini, pengguna harus divalidasi |
+
+#### **2. Pentingnya Autentikasi dan Otorisasi**
+Keduanya digunakan oleh administrator untuk melindungi sistem dan informasi, termasuk dalam *framework* Django. Autentikasi digunakan untuk memverifikasi identitas pengguna atau layanan dan otorisasi digunakan untuk menentukan hak akses pengguna. 
+<br>
+
+*Source:*
+* https://www.geeksforgeeks.org/difference-between-authentication-and-authorization/
+* https://aws.amazon.com/id/what-is/django/
+* https://www.onelogin.com/learn/authentication-vs-authorization
+<br>
+
+## **C. Pengertian *cookies* dan Penggunaannya pada Django**
+#### **1. Pengertian**
+*Cookies* adalah fasilitas penyimpanan di web yang memungkinkan web tersebut dapat mengingat informasi sesi login pengguna. Dalam aplikasi web, *cookies* dapat dibuat, dimodifikasi, dan diakses sehingga dapat memfasilitasi interaksi yang mulus antara pengguna dan situs web. 
+
+#### **2. Penggunaan *cookies* pada Django**
+Penggunaan *cookies* pada Django ini berisikan *session id* khusus untuk mengidentifikasi tiap *browser* dan sesi yang terkait pada situs. 
+
+Data sesi sebenarnya ini disimpan dalam *database* situs secara *default*. Maka dari itu, pengguna dapat mengkonfigurasi Django untuk menyimpan data sesi di tempat lain, seperti *cache, files, "secure", cookies*, namun lokasi *default* yang relatif lebih aman. 
+
+Berikut adalah langkah-langkah penggunakan *cookies* untuk mengelola data sesi pengguna:
+* Saat pengguna mengakses Django, akan dibuat *session id* yang unik untuk sesi pengguna yang baru.
+* Setelah sudah dibuat, Django menyimpan *session id* dalam *cookie* di komputer klien pengguna.
+* Pada server, Django mengaitkan *session id* dengan data sesi pengguna yang berisi informasi seperti status login dan lainnya.
+* Tiap pengguna melakukan permintaan ke server, Django mengambil *session id* dari *cookie* di permintaan HTTP.
+* Django dapat mengubah data sesu sesuai aksi pengguna selama interaksi pengguna-aplikasi.
+* Setelah sesi pengguna selesai, Django membersihkan data sesi yang terkait dengan *session id*.
+<br>
+
+*Source:*
+* https://www.geeksforgeeks.org/es6-cookies/
+* https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Sessions
+
+
+## **D. Keamaan *cookies* dan Risiko Potensialnya**
+#### **1. Keamanan**
+Sebagian besar *cookies* itu aman karena tidak mengandung informasi yang dapat diidentifikasi dan mereka dirancang untuk membuat pengalaman *online* lebih nyaman, seperti mengisi nama pengguna ketika mengunjungi sebuah situs web, memastikan pengalaman penjelajahan yang lancar, dan mengontentikasi identitas. 
+
+Akan tetapi, ada juga *cookies* yang dapat melacak tanpa sepengetahuan kita.
+
+#### **2. Risiko Potensial**
+Terdapat beberapa risiko umum dari *cookie*, di antaranya:
+* *Cross-site request forgery attack (XSRF):* Serangan terjadi karena situs web tidak dapat membedakan aksi yang diterima berasal dari pengguna atau tidak, yang mengakibatkan penghapusan data.
+* *Session fixation:* Serangan terjadi karena penyerang memaksa pengguna untuk menggunakan *session id* sesi penyerang atau orang lain, yang mengakibatkan tampilan pengguna terlihat seperti punya orang lain.
+* *Cookie overflow attack:* Serangan terjadi karena melibatkan penggantian *cookie* domain utama dengan subdomain *cookie* menggunakan `JScript` di subdomain, yang mengakibatkan seluruh *cookie* tidak berguna.  
+<br>
+
+*Source:*
+* https://allaboutcookies.org/information-in-cookies
+* https://resources.infosecinstitute.com/topics/general-security/risk-associated-cookies/
+<br>
+
+## **E. Implementasi *Checklist* Part 3**
+#### **Implementasi Fungsi Registrasi, Login, dan Logout**
+1. Pertama, saya menjalankan *virtual environment* dan membuka `views.py` pada subdirektori `main`.
+<br>
+
+2. Kedua, saya membuat fungsi bernama `register` dan menambahkan beberapa *import*, di antaranya adalah `redirect`, `UserCreationForm`, dan `messages` seperti berikut.
+``` python
+from django.shortcuts import redirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages  
+```
+<br>
+
+3. Ketiga, saya membuat fungsi bernama `login_user` dan menambahkan beberapa *import*, di antaranya adalah `authenticate` dan `login` seperti berikut.
+``` python
+from django.contrib.auth import authenticate, login
+```
+<br>
+
+4. Keempat, saya membuat fungsi bernama `logout_user` dan menambahkan *import* `logout` seperti berikut.
+```python
+from django.contrib.auth import logout
+```
+<br>
+
+5. Kelima, saya menambahkan kode fungsi `register` seperti berikut.
+``` python
+def register(request):
+    form = UserCreationForm()
+
+    if request.method == "POST":
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your account has been successfully created!')
+            return redirect('main:login')
+    context = {'form':form}
+    return render(request, 'register.html', context)
+```
+<br>
+
+6. Keenam, saya menambahkan kode fungsi `login_user` seperti berikut.
+``` python
+def login_user(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('main:show_main')
+        else:
+            messages.info(request, 'Sorry, incorrect username or password. Please try again.')
+    context = {}
+    return render(request, 'login.html', context)
+```
+<br>
+
+7. Ketujuh, saya menambahkan kode fungsi `logout_user` seperti berikut.
+``` python
+def logout_user(request):
+    logout(request)
+    return redirect('main:login')
+```
+<br>
+
+8. Kedelapan, saya membuat berkas HTML baru dengan nama `register.html` dan `login.html` pada folder `main/templates` dengan kode yang sesuai dengan kreasi saya.
+<br>
+
+9. Kesembilan, saya menuju `urls.py`yang ada di subdirektori `main` dan mengimpor beberapa fungsi seperti berikut.
+``` python
+from main.views import register
+from main.views import login_user
+from main.views import logout_user
+```
+<br>
+
+10. Kesepuluh, saya menambahkan kode pada `main.html` setelah *hyperlink tag* untuk *Add New Order* seperti berikut.
+``` html
+...
+<a href="{% url 'main:logout' %}">
+    <button style="color: maroon; font-weight: bolder; align-items: center">
+        Logout
+    </button>
+</a>
+...
+```
+<br>
+
+11. Kesebelas, saya menambahkan *path url* dalam `urlpatterns` agar dapat mengakses fungsi yang diimpor seperti berikut.
+``` python
+...
+path('register/', register, name='register'),
+path('login/', login_user, name='login'),
+path('logout/', logout_user, name='logout'),
+...
+```
+<br>
+
+12. Lalu, saya menambahkan beberapa *import* pada `views.py` di subdirektori `main` seperti berikut.
+``` python
+from django.contrib.auth.decorators import login_required
+```
+
+13. Saya juga menambahkan `@login_required...` pada fungsi `show_main` seperti berikut.
+``` python
+...
+@login_required(login_url='/login')
+def show_main(request):
+...
+```
+<br>
+
+#### **Menerapkan *Cookies* pada Halaman Utama**
+1. Pertama, saya *logout* terlebih dahulu. Lalu, saya membuka `views.py` di subdirektori `main` dan menambahkan beberapa impor seperti berikut.
+``` python
+import datetime
+from django.http import HttpResponseRedirect
+from django.urls import reverse
+```
+<br>
+
+2. Kedua, saya mengganti fungsi `login_user` di `views.py` menjadi seperti berikut.
+``` python
+def login_user(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            response = HttpResponseRedirect(reverse("main:show_main")) 
+            response.set_cookie('last_login', str(datetime.datetime.now()))
+            return response
+        else:
+            messages.info(request, 'Sorry, incorrect username or password. Please try again.')
+    context = {}
+    return render(request, 'login.html', context)
+```
+<br>
+
+3. Ketiga, saya menambahkan kode `'last_login': request.COOKIES['last_login']` di variabel `context` pada fungsi `show_main`yang terletak di `views.py` seperti berikut.
+``` python
+    context = {
+        'name': 'Vina Myrnauli Abigail Siallagan',
+        'class': 'PBP E', 
+        'customer': request.user.username,
+        'products': products,
+        'total_product': total_product,
+        'last_login': request.COOKIES['last_login'],
+    }
+```
+<br>
+
+4. Keempat, saya mengubah kode pada fungsi `logout_user` seperti berikut.
+``` python
+def logout_user(request):
+    logout(request)
+    response = HttpResponseRedirect(reverse('main:login'))
+    response.delete_cookie('last_login')
+    return response
+```
+<br>
+
+#### **Menampilkan Informasi Penggguna yang *Logged In***
+1. Saya menambahkan beberapa kode pada `main.html` di antara tabel dan tombol `logout` seperti berikut.
+``` html
+<h5>Last login: {{ last_login }}</h5>
+```
+<br>
+
+#### **menghubungkan model `Product` dengan `User`**
+1. Saya menambahkan *import* di subdirektori `main` yang ada di `models.py` seperti berikut.
+``` python
+from django.contrib.auth.models import User
+```
+<br>
+
+2. Lalu, pada `models.py` di model `Product` yang sudah dibuat, saya menambahkan kode seperti berikut.
+``` python
+class Product(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    ...
+```
+<br>
+
+3. Selanjutnya, saya menuju `views.py` yang ada di subdirektori `main`. Kemudian, saya menambahkan kode pada fungsi `create_product` seperti berikut.
+``` python
+def create_product(request):
+    form = ProductForm(request.POST or None)
+
+    if form.is_valid() and request.method == "POST":
+        product = form.save(commit=False)
+        product.user = request.user
+        product.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+    ...
+```
+<br>
+
+4. Terakhir, saya mengubah satu baris pada fungsi `show_main` seperti berikut.
+``` python
+def show_main(request):
+    products = Product.objects.filter(user=request.user)
+    total_product = len(products)
+   ...
+...
+```
+<br>
+
+#### **Membuat Dua Akun dengan Tiga *Dummy Data***
+1. Pertama, saya membuka `command` dan menjalankan *virtual environment* seperti berikut.
+``` bash
+env\Scripts\activate.bat
+```
+<br>
+
+2. Kedua, saya menjalankan proyek Django dengan perintah `python manage.py runserver` dan membuka `http://localhost:8000`.
+<br>
+
+3. Ketiga, saya melakukan *register* pada dua akun yang bernama `halodok` dan `vinamyrnauli`. 
+<br>
+
+4. Keempat, saya melakukan *login* dengan memasukkan `username` dan `password`.
+<br>
+
+5. Pada tiap akun tersebut, saya klik `Add New Order`. Lalu, saya tambahkan produk sebanyak tiga kali dan mengisi `Name`, `Price`, `Amount`, dan `Description`.
+<br>
+
+6. Setelah itu, saya klik `Add Product` dan produk sudah ada terpampang jelas di `main.html`.
+<br>
+
+#### **F. BONUS TUGAS 4**
+Berikut adalah bukti bahwa saya menambahkan fungsi `add_product`, `decrement_product`, dan `remove_product` di `views.py` sehingga dapat menghasilkan tampilan seperti berikut.
+![COBA](/photos/bonusfour.jpg)
+<br>
 </details>
