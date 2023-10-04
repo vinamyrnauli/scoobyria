@@ -855,3 +855,543 @@ Berikut adalah bukti bahwa saya menambahkan fungsi `add_product`, `decrement_pro
 ![COBA](/photos/bonusfour.jpg)
 <br>
 </details>
+
+<details>
+<summary>📋Assignment 5</summary>
+
+## **DAFTAR ISI**
+* [Manfaat *Element Selector* dan Penggunaan Waktunya](#a-manfaat-tiap-element-selector-dan-penggunaan-waktu-yang-tepatnya)
+* [Penjelasan HTML5 Tag](#b-penjelasan-html5-tag)
+* [Perbedaan *Margin* dan *Padding*](#c-perbedaan-margin-dan-padding)
+* [Perbedaan dan Penggunaan *framework* CSS Tailwind dan Bootstrap](#d-perbedaan-dan-penggunaan-framework-css-tailwind-serta-bootstrap)
+* [Implementasi *Checklist*](#e-implementasi-checklist-tugas-5)
+* [BONUS TUGAS 5](#f-bonus-tugas-5)
+<hr>
+
+## **A. Manfaat Tiap *Element Selector* dan Penggunaan Waktu yang Tepatnya**
+#### **1. *Element Selector***
+* **Manfaat:**
+    * Dapat mengubah properti untuk semua elemen yang memiliki tag HTML yang sama atau dapat memilih elemen HTML berdasarkan nama elemen.
+    * Dapat mengaplikasikan *style* yang sama pada tiap elemen dengn jenis yang sama, contohnya seperti tag `<p>` atau `<h1>`.
+* **Penggunaan Waktu yang Tepat:**
+    * Ketika kita ingin mengubah *style* tiap elemen dengan jenis yang sama dan tidak ada *class* maupun ID khusus. 
+<br>
+
+#### **2. *ID Selector***
+* **Manfaat:**
+    * Dapat memilih elemen berdasarkan ID yang diberikan. IDnya unik dalam satu halaman web dan dapat ditambahkan pada halaman template HTML.
+* **Penggunaan Waktu yang Tepat:**
+    * Ketika ingin memberikan interaksi atau *style* khusus pada satu elemen tertentu.
+<br>
+
+#### **3. *Class Selector***
+* **Manfaat:**
+    * Dapat mengelompokkan elemen dengan karakteristik yang sama.
+    * Dapat memilih elemen berdasarkan nama *class* yang diberi.
+* **Penggunaan Waktu yang Tepat:**
+    * Ketika ingin memberikan *style* yang identik terhadap beberapa elemen dalam halaman.
+<br>
+
+*Source:*
+* https://www.w3schools.com/CSS/css_selectors.asp
+<br>
+
+## **B. Penjelasan HTML5 Tag**
+| Tag | Penjelasan |
+| --- | --- |
+| `<a>` | Mendefinisikan *hyperlink* |
+| `<abbr>` | Mendefinisikan bentuk singkatan dari kata atau frasa yang panjang |
+| `<address>` | Menentukan informasi kontak penulis |
+| `<area>` | Mendefinisikan area tertentu dalam peta gambar |
+| `<!--...-->` | Menentukan komentar |
+| `<!DOCTYPE>` | Menentukan jenis dokumen |
+| `<div>` | Menentukan bagian dalam dokumen |
+| `<detail>` | Menentukan informasi tambahan yang dapat diperoleh pengguna |
+| `<header>` | Menentukan informasi tentang dokumen |
+| `<q>` | Menentukan variabel |
+| `<select>` | Menentukan daftar yang dapat dipilih |
+| `<spacer>` | Menentukan *white space* |
+| `<style>` | Menentukan definisi gaya |
+| `<table>` | Menentukan tabel |
+
+<br>
+
+*Source:*
+* https://www.tutorialrepublic.com/html-reference/html5-tags.php
+* https://www.tutorialspoint.com/html5/html5_tags.htm
+<br>
+
+## **C. Perbedaan *Margin* dan *Padding***
+![COBA](/photos/marginpadding.png)
+| *Margin* | *Padding* |
+| --- | --- |
+| Mengosongkan area di sekitar border (transparan) | Mengosongkan area di sekitar konten (transparan) |
+| Ruang luar suatu elemen yaitu *margin* yang merupakan ruang di luar batas | Ruang dalam suatu elemen *padding* yaitu ruang dalam batas elemen |
+| Dapat berupa angka negatif atau *float* | Tidak boleh ada nilai-nilai negatif |
+| Mengatur *margin* menjadi otomatis | Tidak dapat mengatur *padding* menjadi otomatis |
+| Penataan *style* elemen seperti warna *backgorund* tidak memengaruhi *margin* | *Padding* dipengaruhi *style* suatu elemen seperti *background* |
+
+<br>
+
+*Source:*
+* https://www.geeksforgeeks.org/css-padding-vs-margin/
+<br>
+
+## **D. Perbedaan dan Penggunaan *framework* CSS Tailwind serta Bootstrap**
+| Tailwind | Bootstrap |
+| --- | --- |
+| Membangun tampilan dengan menggabungkan *class-class* utilitas yang telah didefinisikan sebelumnya | Menggunakan *style* dan komponen yang sudah didefinisikan, memiliki tampilan yang sudah jadi dan dapat digunakan langsung |
+| Memiliki *file* CSS yang lebih kecil dan memuat *class-class* utilitas yang ada | Memiliki *file* CSS yang lebih besar karena termasuk banyak komponen yang telah didefinisikan |
+| Memberikan fleksibilitas dan adaptabilitas tinggi terhadap proyek | Menghasilkan tampilan yang lebih konsisten di seluruh proyek karena memakai komponen yang sudah didefinisikan |
+| Memiliki pembelajaran lebih curam karena perlu pemahaman terhadap *class-class* utilitas yang tersedia dan cara menggabungkannya untuk mencapai tampilan yang kita inginkan | Memiliki pembelajaran yang lebih cepat untuk pemula karena dapat mulai dengan komponen yang sudah didefinisikan |
+
+<br>
+
+Kapan sebaiknya kita menggunakan Bootstrap daripada Tailwind, dan sebaliknya?
+
+* ***Bootsrap:***
+    * Apabila ingin membangun situs web dengan cepat.
+    * Apabila ingin menggunakan komponen-komponen bawaan yang sudah dirancang.
+    * Apabila ingin menjaga konsistensi dalam desain.
+
+* ***Tailwind:***
+    * Apabila ingin memiliki kontrol yang lebih besar dalam merancang tampilan sesuai preferensi.
+    * Apabila ingin menggunakan *class-class* CSS yang ada pada Tailwind.
+    * Apabila ingin mengurangi ukuran berkas CSS untuk meningkatkan kinerja situs web.
+   
+
+*Source:*
+* https://www.tutorialspoint.com/tailwind-css-vs-bootstrap
+* https://pbp-fasilkom-ui.github.io/ganjil-2024/docs/tutorial-4
+<br>
+
+## **E. Implementasi *Checklist* Tugas 5**
+#### **1. Design Login Page**
+Pertama, saya melakukan kustomisasi desain dengan menggunakan CSS *framework* yaitu Bootstrap, lalu saya melakukan instalasi Bootstrap dan lainnya.
+
+``` html
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+J4jsl5c9zdLKaUk5Ae5f5b1bw6AUn5f5v8FZJoMxm6f5cH1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+```
+
+Selanjutnya, saya melakukan kustomisasi pada *Login Page* seperti berikut.
+![LOGINPAGE](/photos/loginpage.jpg)
+
+Berikut adalah kode yang saya modifikasi.
+``` html
+{% extends 'base.html' %}
+
+{% block meta %}
+    <title>Login</title>
+{% endblock meta %}
+
+{% block content %}
+<style>
+    .centered-elements {
+      text-align: center;
+    }
+
+    .centered-elements .btn,
+    .centered-elements p {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0;
+    }
+</style>
+<section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="col-md-8 col-lg-7 col-xl-6">
+          <img src="https://i.ibb.co/8bzR20H/dog-png.webp"
+            class="img-fluid" alt="Phone image">
+        </div>
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+          <form method="POST" action="">
+            {% csrf_token %}
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form1Example13">Username</label>
+              <input type="text" name="username" id="username" class="form-control" placeholder="Username">
+            </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form1Example23">Password</label>
+              <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+            </div>
+  
+            <!-- Submit button -->
+            <div class="centered-elements">
+                <!-- Submit button -->
+                <a href="{% url 'main:register' %}" class="btn btn-primary btn-lg" style="background-color:peru; border-color: whitesmoke;">Sign up</a>
+                
+                <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
+
+              
+                <button type="submit" class="btn btn-primary btn-lg" style="background-color:sienna; border-color: whitesmoke;" value="Login">Log in</button>
+            </div>
+  
+        </form>
+        {% if messages %}
+            <ul class="mt-3">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+<body style="background-image: url(https://i.ibb.co/zXgLwgP/4-7315db01-be96-4931-889c-8142cb97b580.webp); background-size: cover; background-position: center;">
+{% endblock content %}
+```
+<br>
+
+#### **2. Design Register Page**
+Lalu, saya memberikan beberapa tambahan pada *Register Page* seperti berikut.
+![REGISTERPAGE](/photos/registerpage.jpg)
+
+Berikut adalah rincian hode *Register Page* saya.
+``` html
+{% extends 'base.html' %}
+
+{% block meta %}
+    <title>Register</title>
+{% endblock meta %}
+
+{% block content %}  
+<body class="container-fluid" style="background-color:bisque;"> 
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title">Register</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST">
+                            {% csrf_token %}
+
+                            <div class="form-group">
+                                {{ form.username.label_tag }}
+                                {{ form.username }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form.email.label_tag }}
+                                {{ form.email }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form.password1.label_tag }}
+                                {{ form.password1 }}
+                            </div>
+
+                            <div class="form-group">
+                                {{ form.password2.label_tag }}
+                                {{ form.password2 }}
+                            </div>
+
+                            <button type="submit" class="btn btn-success">Register</button>
+                        </form>
+                        
+                        {% if messages %}
+                        <ul>
+                            {% for message in messages %}
+                            <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+{% endblock content %}
+```
+<br>
+
+#### **3. Design Edit Product dan Add Product Page**
+Kemudian, saya mengubah beberapa kode pada *Edit dan Add Product Page* seperti berikut.
+**1. *Edit Product***
+![ADDPRODUCT](/photos/editproduct.jpg)
+<br>
+
+**2. *Add Product***
+![ADDPRODUCT](/photos/addproduct.jpg)
+<br>
+
+Berikut adalah rincian hode *Edit dan Add Product* saya.
+**A. *Edit Product***
+``` html
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-primary text-white">
+                    <h3 class="card-title">Edit Product</h3>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <table class="table">
+                            {{ form.as_table }}
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <button type="submit" class="btn btn-success">Edit Product</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+```
+<br>
+
+**B. *Add Product***
+``` html
+{% extends 'base.html' %} 
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header bg-success text-white">
+                    <h3 class="card-title">Add New Product</h3>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        {% csrf_token %}
+                        <table class="table">
+                            {{ form.as_table }}
+                            <tr>
+                                <td>
+                                    <button type="submit" class="btn btn-primary">Add Product</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: pink;
+    }
+
+    tr {
+        color: saddlebrown;
+        font-weight: bolder;
+        font-family: Arial, sans-serif;
+    }
+</style>
+{% endblock %}
+```
+<br>
+
+#### **4. Design Main Page**
+Terakhir, saya memodifikasi *Main Page* seperti berikut ini.
+![MAINPAGE](/photos/mainpage.jpg)
+Berikut adalah rincian hode *Design Main Page* saya.
+``` html
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin-right: 5px;
+}
+
+h2 {
+    color: crimson;
+    font-family: Arial, sans-serif;
+    font-size: larger;
+    text-align: center;
+    font-weight: bolder;
+}
+
+h3 {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: small;
+    font-weight: bolder;
+    text-align: center;
+}
+
+h4 {
+    color: crimson;
+    font-weight: bolder;
+    font-size: large;
+    font-family: Arial, sans-serif;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+</style>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Icons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body class="bg-image h-100" style="background-color: #6095F0;">
+    <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="card shadow-2-strong" style="background-color: #f5f7fa;">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-borderless mb-0">
+                                    <thead>
+                                        <h1 style="color: saddlebrown; font-family: Arial, sans-serif; font-weight: bolder; display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;text-shadow: 2px 2px 4px #000;">🥤🐶SCOOBYRIA🐶🍔</h1>
+                                        <h2>Hello, {{ customer }} !</h2>
+                                        <h3>SCOOBYRIA provides food and drinks for the PBP E adventurers. The food and drinks provided can be either delicious or unpleasant, depending on their description. If you choose to consume toxic food or beverages, the choice is at your own risk.</h3>
+                                        <h4>{{ total_product }} ITEMS(S) AVAILABLE</h4>
+                                        <tr>
+                                            <th scope="col">NAME</th>
+                                            <th scope="col">PRICE</th>
+                                            <th scope="col">AMOUNT</th>
+                                            <th scope="col">DESCRIPTION</th>
+                                            <th scope="col">DETAILS</th>
+                                            <th scope="col">CUSTOMIZE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for product in products %}
+                                        <tr class="add-colortext">
+                                            <td>{{product.name}}</td>
+                                            <td>{{product.price}}</td>
+                                            <td>{{product.amount}}</td>
+                                            <td>{{product.description}}</td>
+                                            <td>
+                                                <div class="button-container">
+                                                    <form action="{% url 'main:add_product' product.id %}" method="post">
+                                                        {% csrf_token %}
+                                                        <button class="btn btn-success btn-sm px-3 shadow" type="submit" name="Tambah"><i class="fa fa-plus" aria-hidden="true" ></i></button>
+                                                    </form>
+                                                    <form action="{% url 'main:decrement_product' product.id %}" method="POST">
+                                                        {% csrf_token %}
+                                                        <button class="btn btn-warning btn-sm px-3 shadow" type="submit" name="Kurang"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                                    </form>
+                                                    <form action="{% url 'main:remove_product' product.id %}" method="post">
+                                                        {% csrf_token %}
+                                                        <button class="btn btn-danger btn-sm px-3 shadow" type="submit" name="Hapus"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="button-container">
+                                                    <a href="{% url 'main:edit_product' product.pk %}">
+                                                        <button class="btn btn-primary btn-sm px-3 shadow" name="Edit">Edit</button>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <a href="{% url 'main:create_product' %}" class="btn btn-success btn-sm px-50 shadow">
+            <i class="fa fa-clipboard" aria-hidden="true"></i> Add New Order
+        </a>
+        
+        <a href="{% url 'main:logout' %}" class="btn btn-danger btn-sm px-50 shadow">
+            <i class="fa fa-home" aria-hidden="true"></i> Logout
+        </a>
+    </div>
+
+</body>
+
+<div class="bg-light py-4">
+    <div class="container text-center">
+        <p class="text-muted mb-0 py-2">Name: {{ name }}</p>
+        <p class="text-muted mb-0 py-2">Class: {{ class }}</p>
+    </div>
+</div>
+
+{% endblock content %}
+```
+<br>
+
+#### **F. BONUS TUGAS 5**
+Berikut adalah bukti bahwa saya menambahkan bonus seperti berikut.
+``` html
+<style>
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin-right: 5px;
+}
+
+h2 {
+    color: crimson;
+    font-family: Arial, sans-serif;
+    font-size: larger;
+    text-align: center;
+    font-weight: bolder;
+}
+
+h3 {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: small;
+    font-weight: bolder;
+    text-align: center;
+}
+
+h4 {
+    color: crimson;
+    font-weight: bolder;
+    font-size: large;
+    font-family: Arial, sans-serif;
+}
+
+th {
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+</style>
+```
+</details>

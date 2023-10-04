@@ -5,58 +5,52 @@
 {% endblock meta %}
 
 {% block content %}  
+<body class="container-fluid" style="background-color:bisque;"> 
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-primary text-white">
+                        <h3 class="card-title">Register</h3>
+                    </div>
+                    <div class="card-body">
+                        <form method="POST">
+                            {% csrf_token %}
 
+                            <div class="form-group">
+                                {{ form.username.label_tag }}
+                                {{ form.username }}
+                            </div>
 
-<div class = "login">
-    <style>
-        body {
-            background-color:wheat;
-        }
-    
-        h1 {
-            color: cornflowerblue; 
-            font-family: Arial, sans-serif; 
-            font-weight: bolder; 
-            display: flex; 
-            flex-direction: row; 
-            text-shadow: 2px 2px 4px #000;
-        }
-    
-        td {
-            color: black;
-            font-weight: lighter; 
-            font-family: 'Times New Roman', Times, serif;
-        }
+                            <div class="form-group">
+                                {{ form.email.label_tag }}
+                                {{ form.email }}
+                            </div>
 
-        table {
-            color: saddlebrown;
-            font-weight: bolder; 
-            font-family: Arial, sans-serif;
-        }
+                            <div class="form-group">
+                                {{ form.password1.label_tag }}
+                                {{ form.password1 }}
+                            </div>
 
-    </style>
-    
-    <h1>Register</h1>  
+                            <div class="form-group">
+                                {{ form.password2.label_tag }}
+                                {{ form.password2 }}
+                            </div>
 
-        <form method="POST" >  
-            {% csrf_token %}  
-            <table>  
-                {{ form.as_table }}  
-                <tr>  
-                    <td></td>
-                    <td><input type="submit" name="submit" style = "color: green; font-family: Arial, sans-serif; font-weight: bolder;" value="Daftar"/></td>  
-                </tr>  
-            </table>  
-        </form>
-
-    {% if messages %}  
-        <ul>   
-            {% for message in messages %}  
-                <li>{{ message }}</li>  
-                {% endfor %}  
-        </ul>   
-    {% endif %}
-
-</div>  
-
+                            <button type="submit" class="btn btn-success">Register</button>
+                        </form>
+                        
+                        {% if messages %}
+                        <ul>
+                            {% for message in messages %}
+                            <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
 {% endblock content %}

@@ -3,6 +3,7 @@ from main.views import show_main, create_product, add_product, decrement_product
 from main.views import register
 from main.views import login_user
 from main.views import logout_user
+from main.views import edit_product
 
 app_name = 'main'
 
@@ -11,7 +12,9 @@ urlpatterns = [
     path('create-product', create_product, name='create_product'),
     path('add_product/<int:product_id>/', add_product, name='add_product'),
     path('decrement_product/<int:product_id>/', decrement_product, name='decrement_product'),
-    path('remove_product/<int:product_id>/',remove_product, name='remove_product'),
+    path('remove_product/<int:product_id>/',
+    remove_product, name='remove_product'),
+    path('edit-product/<int:id>', edit_product, name='edit_product'),
     path('xml/', show_xml, name='show_xml'), 
     path('json/', show_json, name='show_json'), 
     path('xml/<int:id>/', show_xml_by_id, name='show_xml_by_id'),

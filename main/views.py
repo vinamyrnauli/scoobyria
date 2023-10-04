@@ -44,6 +44,18 @@ def create_product(request):
     context = {'form': form}
     return render(request, "create_product.html", context)
 
+def edit_product(request, id):
+    product = Product.objects.get(pk = id)
+
+    form = ProductForm(request.POST or None, instance=product)
+
+    if form.is_valid() and request.method == "POST":
+        form.save()
+        return HttpResponseRedirect(reverse('main:show_main'))
+
+    context = {'form': form}
+    return render(request, "edit_product.html", context)
+
 # BONUS
 def add_product(request, product_id):
     if request.method == 'POST' and 'Tambah' in request.POST:

@@ -5,62 +5,63 @@
 {% endblock meta %}
 
 {% block content %}
-
 <style>
-    body {
-        background-color:wheat;
+    .centered-elements {
+      text-align: center;
     }
 
-    h1 {
-        color: cornflowerblue; 
-        font-family: Arial, sans-serif; 
-        font-weight: bolder; 
-        display: flex; 
-        flex-direction: row; 
-        text-shadow: 2px 2px 4px #000;
-    }
-
-    td {
-        color: saddlebrown;
-        font-weight: bolder; 
-        font-family: Arial, sans-serif;
+    .centered-elements .btn,
+    .centered-elements p {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0;
     }
 </style>
+<section class="vh-100">
+    <div class="container py-5 h-100">
+      <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="col-md-8 col-lg-7 col-xl-6">
+          <img src="https://i.ibb.co/8bzR20H/dog-png.webp"
+            class="img-fluid" alt="Phone image">
+        </div>
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+          <form method="POST" action="">
+            {% csrf_token %}
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form1Example13">Username</label>
+              <input type="text" name="username" id="username" class="form-control" placeholder="Username">
+            </div>
+  
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form1Example23">Password</label>
+              <input type="password" name="password" id="password" class="form-control" placeholder="Password">
+            </div>
+  
+            <!-- Submit button -->
+            <div class="centered-elements">
+                <!-- Submit button -->
+                <a href="{% url 'main:register' %}" class="btn btn-primary btn-lg" style="background-color:peru; border-color: whitesmoke;">Sign up</a>
+                
+                <p class="text-center fw-bold mx-3 mb-0 text-muted">OR</p>
 
-<div class = "login">
+              
+                <button type="submit" class="btn btn-primary btn-lg" style="background-color:sienna; border-color: whitesmoke;" value="Login">Log in</button>
+            </div>
+  
+        </form>
+        {% if messages %}
+            <ul class="mt-3">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <h1>Login</h1>
-
-    <form method="POST" action="">
-        {% csrf_token %}
-        <table>
-            <tr>
-                <td>Username: </td>
-                <td><input type="text" name="username" placeholder="Username" class="form-control"></td>
-            </tr>
-                    
-            <tr>
-                <td>Password: </td>
-                <td><input type="password" name="password" placeholder="Password" class="form-control"></td>
-            </tr>
-
-            <tr>
-                <td></td>
-                <td><input class="btn login_btn" type="submit" style = "color: green; font-family: Arial, sans-serif; font-weight: bolder;" value="Login"></td>
-            </tr>
-        </table>
-    </form>
-
-    {% if messages %}
-        <ul>
-            {% for message in messages %}
-                <li>{{ message }}</li>
-            {% endfor %}
-        </ul>
-    {% endif %}     
-        
-    Don't have an account yet? <a href="{% url 'main:register' %}">Register Now</a>
-
-</div>
-
+<body style="background-image: url(https://i.ibb.co/zXgLwgP/4-7315db01-be96-4931-889c-8142cb97b580.webp); background-size: cover; background-position: center;">
 {% endblock content %}

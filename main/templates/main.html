@@ -1,148 +1,136 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1 style="color: saddlebrown; font-family: Arial, sans-serif; font-weight: bolder; display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;text-shadow: 2px 2px 4px #000;">🥤🐶SCOOBYRIA🐶🍔</h1>
+<style>
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin-right: 5px;
+}
 
-    <style>
-        body {
-            background-color: bisque;
-        }
+h2 {
+    color: crimson;
+    font-family: Arial, sans-serif;
+    font-size: larger;
+    text-align: center;
+    font-weight: bolder;
+}
 
-        h1 {
-            color: saddlebrown; 
-            font-family: Arial, sans-serif; 
-            font-weight: bolder; 
-            display: flex; 
-            flex-direction: row; 
-            justify-content: space-evenly; 
-            align-items: center;
-            text-shadow: 2px 2px 4px #000;
-        }
+h3 {
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: small;
+    font-weight: bolder;
+    text-align: center;
+}
 
-        h2 {
-            color:palevioletred; 
-            font-family: Arial, sans-serif;
-            font-size:large;
-            text-align: center;
-            text-shadow: 1px 1px 1px #000;
-        }
+h4 {
+    color: crimson;
+    font-weight: bolder;
+    font-size: large;
+    font-family: Arial, sans-serif;
+}
 
-        h3 {
-            color:olive; 
-            font-family: Arial, sans-serif;
-            font-size: small;
-            text-align: center;
-        }
+th {
+    text-align: center;
+}
 
-        h4 {
-            color:darkslateblue; 
-            font-weight: bolder; 
-            font-family: Arial, sans-serif;
-            text-shadow: 1px 1px 1px #000;
-        }
+td {
+    text-align: center;
+}
+</style>
 
-        h5 {
-            color: saddlebrown; 
-            font-weight: bolder; 
-            font-family: Arial, sans-serif;
-        }
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Icons</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
 
-        th {
-            color: palevioletred; 
-            font-weight: bolder; 
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
+<body class="bg-image h-100" style="background-color: #6095F0;">
+    <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-12">
+                    <div class="card shadow-2-strong" style="background-color: #f5f7fa;">
+                        <div class="card-body">
+                            <div class="table-responsive">
+                                <table class="table table-borderless mb-0">
+                                    <thead>
+                                        <h1 style="color: saddlebrown; font-family: Arial, sans-serif; font-weight: bolder; display: flex; flex-direction: row; justify-content: space-evenly; align-items: center;text-shadow: 2px 2px 4px #000;">🥤🐶SCOOBYRIA🐶🍔</h1>
+                                        <h2>Hello, {{ customer }} !</h2>
+                                        <h3>SCOOBYRIA provides food and drinks for the PBP E adventurers. The food and drinks provided can be either delicious or unpleasant, depending on their description. If you choose to consume toxic food or beverages, the choice is at your own risk.</h3>
+                                        <h4>{{ total_product }} ITEMS(S) AVAILABLE</h4>
+                                        <tr>
+                                            <th scope="col">NAME</th>
+                                            <th scope="col">PRICE</th>
+                                            <th scope="col">AMOUNT</th>
+                                            <th scope="col">DESCRIPTION</th>
+                                            <th scope="col">DETAILS</th>
+                                            <th scope="col">CUSTOMIZE</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for product in products %}
+                                        <tr class="add-colortext">
+                                            <td>{{product.name}}</td>
+                                            <td>{{product.price}}</td>
+                                            <td>{{product.amount}}</td>
+                                            <td>{{product.description}}</td>
+                                            <td>
+                                                <div class="button-container">
+                                                    <form action="{% url 'main:add_product' product.id %}" method="post">
+                                                        {% csrf_token %}
+                                                        <button class="btn btn-success btn-sm px-3 shadow" type="submit" name="Tambah"><i class="fa fa-plus" aria-hidden="true" ></i></button>
+                                                    </form>
+                                                    <form action="{% url 'main:decrement_product' product.id %}" method="POST">
+                                                        {% csrf_token %}
+                                                        <button class="btn btn-warning btn-sm px-3 shadow" type="submit" name="Kurang"><i class="fa fa-minus" aria-hidden="true"></i></button>
+                                                    </form>
+                                                    <form action="{% url 'main:remove_product' product.id %}" method="post">
+                                                        {% csrf_token %}
+                                                        <button class="btn btn-danger btn-sm px-3 shadow" type="submit" name="Hapus"><i class="fa fa-times" aria-hidden="true"></i></button>
+                                                    </form>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="button-container">
+                                                    <a href="{% url 'main:edit_product' product.pk %}">
+                                                        <button class="btn btn-primary btn-sm px-3 shadow" name="Edit">Edit</button>
+                                                    </a>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-        td {
-            padding-inline: 70px;
-            text-align: center;
-        }
-
-        .table-container {
-            width: 30%;
-        }
-
-        .add-colortitle {
-            background-color: olivedrab;
-        }
+    <div class="button-container">
+        <a href="{% url 'main:create_product' %}" class="btn btn-success btn-sm px-50 shadow">
+            <i class="fa fa-clipboard" aria-hidden="true"></i> Add New Order
+        </a>
         
-        .add-colortext {
-            background-color: burlywood;
-        }
+        <a href="{% url 'main:logout' %}" class="btn btn-danger btn-sm px-50 shadow">
+            <i class="fa fa-home" aria-hidden="true"></i> Logout
+        </a>
+    </div>
 
-    </style>
+</body>
 
-    <h5>Owner: {{name}}</h5>
-    <h5>Class: {{class}}</h5>
-
-
-<table class = "table-container">
-    <br>
-    <h2>Hello, {{ customer }} !</h2>
-
-    <h3>SCOOBYRIA provides food and drinks for the PBP E adventurers. The food and drinks provided can be either delicious or unpleasant, depending on their description. If you choose to consume toxic food or beverages, the choice is at your own risk.</h3>
-
-    <h4>You have {{ total_product }} item(s). BUY MORE FOR BETTER FUTURE!!!</h4>
-    <tr class = "add-colortitle">
-        <th>Name</th>
-        <th>Price</th>
-        <th>Amount</th>
-        <th>Description</th>
-        <th>Details</th>
-        <th>Remove Product</th>
-    </tr>
-
-    {% comment %} Berikut cara memperlihatkan data produk di bawah baris ini {% endcomment %}
-
-    {% for product in products %}
-        <tr class = "add-colortext">
-            <td>{{product.name}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.amount}}</td>
-            <td>{{product.description}}</td>
-            <td>
-                <form action="{% url 'main:add_product' product.id %}" method = "post">
-                    {% csrf_token %}
-                    <button style="color: green; font-weight: bolder; align-items: center" type = "submit" name = "Tambah">
-                        More!😁
-                    </button>
-                </form>
-                <form action="{% url 'main:decrement_product' product.id %}" method = "post">
-                    {% csrf_token %}
-                    <button style="color: orange; font-weight: bolder; align-items: center" type = "submit" name="Kurang">
-                        Less!🙂
-                    </button>
-                </form>
-            </td>
-        
-            <td>
-                <form action="{% url 'main:remove_product' product.id %}" method = "post">
-                    {% csrf_token %}
-                    <button style="color: red; font-weight: bolder; align-items: center" type = "submit" name="Hapus">
-                        No More!☹️
-                    </button>
-                </form>
-            </td>
-        </tr>
-    {% endfor %}
-</table>
-
-<br />
-
-<a href="{% url 'main:create_product' %}">
-    <button style="color: green; font-weight: bolder; align-items: center" >
-        Add New Order
-    </button>
-</a>
-
-<a href="{% url 'main:logout' %}">
-    <button style="color: maroon; font-weight: bolder; align-items: center">
-        Logout
-    </button>
-</a>
-
-<h5>Last login: {{ last_login }}</h5>
+<div class="bg-light py-4">
+    <div class="container text-center">
+        <p class="text-muted mb-0 py-2">Name: {{ name }}</p>
+        <p class="text-muted mb-0 py-2">Class: {{ class }}</p>
+    </div>
+</div>
 
 {% endblock content %}
-
