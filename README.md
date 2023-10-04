@@ -850,11 +850,12 @@ env\Scripts\activate.bat
 6. Setelah itu, saya klik `Add Product` dan produk sudah ada terpampang jelas di `main.html`.
 <br>
 
-#### **F. BONUS TUGAS 4**
+## **F. BONUS TUGAS 4**
 Berikut adalah bukti bahwa saya menambahkan fungsi `add_product`, `decrement_product`, dan `remove_product` di `views.py` sehingga dapat menghasilkan tampilan seperti berikut.
 ![COBA](/photos/bonusfour.jpg)
 <br>
 </details>
+<<<<<<< HEAD
 
 <details>
 <summary>📋Assignment 5</summary>
@@ -1395,3 +1396,5 @@ td {
 </style>
 ```
 </details>
+=======
+>>>>>>> 520d5ccbcc640e2c96a95098e2dbd2d6ab1923ba
