@@ -855,7 +855,6 @@ Berikut adalah bukti bahwa saya menambahkan fungsi `add_product`, `decrement_pro
 ![COBA](/photos/bonusfour.jpg)
 <br>
 </details>
-<<<<<<< HEAD
 
 <details>
 <summary>📋Assignment 5</summary>
@@ -1396,5 +1395,3 @@ td {
 </style>
 ```
 </details>
-=======
->>>>>>> 520d5ccbcc640e2c96a95098e2dbd2d6ab1923ba
