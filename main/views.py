@@ -1,4 +1,5 @@
 import datetime
+from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponseRedirect, HttpResponseNotFound
 from django.urls import reverse
 from django.contrib.auth.decorators import login_required
@@ -107,7 +108,7 @@ def get_product_json(request):
     product_item = Product.objects.filter(user=request.user)
     return HttpResponse(serializers.serialize('json', product_item))
 
-#@csrf_exempt
+@csrf_exempt
 def add_product_ajax(request):
     if request.method == 'POST':
         name = request.POST.get("name")

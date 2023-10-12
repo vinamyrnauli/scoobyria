@@ -69,7 +69,7 @@ td {
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- External stylesheet link for Scoobyria buttons -->
-    <title>Icons</title>
+    <title>SCOOBYRIA</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
@@ -94,7 +94,10 @@ td {
                     <div class="card shadow-2-strong" style="background-color: #f5f7fa;">
                         <div class="card-body">
                             <div class="table-responsive">
-                                <h4>You have {{ total_product }} items in your selection</h4>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <h4 id = "update-size">You have {{ total_product }} items in your selection</h4>
+                                    <h4>Last login: {{ last_login }}</h4>
+                                </div>
 
                                 <!-- This is where I changed the cards data item code to support AJAX GET -->
                                 <div id = "scoobyria_card"></div>
@@ -109,15 +112,13 @@ td {
 
     <!-- Buttons for adding new order, logging out, and add new order via AJAX -->
     <div class="button-container-two">
-        <a href="{% url 'main:create_product' %}" class="btn btn-success btn-sm px-50 shadow">
-            <i class="fa fa-clipboard" aria-hidden="true"></i> Add New Order
-        </a>
+        <button type="button" class="btn btn-success btn-sm px-50 shadow" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Order by AJAX</button>
         
         <a href="{% url 'main:logout' %}" class="btn btn-danger btn-sm px-50 shadow">
             <i class="fa fa-home" aria-hidden="true"></i> Logout
         </a>
 
-        <button type="button" class="btn btn-primary btn-sm px-50 shadow" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Order by AJAX</button>
+        
     </div>
 
     <!-- Modal for adding a new product via AJAX -->
@@ -180,6 +181,7 @@ td {
     async function deleteProducts(id) {
         const response = await fetch(`/remove-product/${id}`);
         refreshProducts();
+        updateSize()
     }
 
     // Function to refresh the order list
@@ -213,19 +215,31 @@ td {
         </div>`
         })
         
-        // Initial refresh of products when the page loads
+        
         document.getElementById("scoobyria_card").innerHTML = htmlString
     }
 
+    // Initial refresh of products when the page loads
     refreshProducts()
 
-    // Function to add a product via AJAX
+    // Function to update size or items
+    function updateSize() {
+        getProducts().then((products) => {
+            const sizeItems = document.getElementById("update-size");
+            sizeItems.innerHTML = `You have ${products.length} items in your selection`;
+        });
+    }
+
+    // Function to add an order via AJAX
     function addProduct() {
         fetch("{% url 'main:add_product_ajax' %}", {
             method: "POST",
             body: new FormData(document.querySelector('#form'))
-        }).then(refreshProducts)
-
+            
+        }).then(() => {
+            refreshProducts()
+            updateSize();})
+        
         document.getElementById("form").reset()
         return false
     }
